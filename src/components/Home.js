@@ -10,9 +10,9 @@ const Home = () => {
   const [inpval, setInpval] = useState({
     name: "",
     email: "",
-    phoneNo: "",
+    phone: "",
     password: "",
-    refrenceId: ""
+    refrenceid: ""
   });
 
 
@@ -25,19 +25,19 @@ const Home = () => {
 
     const addData = async (e) => {
       e.preventDefault(e);
-      const { name, email, phoneNo, password, refrenceId } = inpval;
+      const { name, email, phone, password, refrenceid } = inpval;
       console.log(inpval);
       await axios.post("http://localhost/backend/database.php",{
         name,
         email,
-        phoneNo,
+        phone,
         password,
-        refrenceId
+        refrenceid
       })
       .then(res=>{
         console.log(res);
       })
-      alert('Data is Inserted');
+      //alert('Data is Inserted');
       navigate('/Products');
   };
   return (
@@ -46,7 +46,7 @@ const Home = () => {
         <section className="d-flex justify-content-between">
           <div className="left-data p-3" style={{ width: "100%" }}>
             <h3 className="text-center col-lg-6 mt-3">Sign Up</h3>
-            <Form>
+            <Form >
               <Form.Group className="mb-3  col-lg-6" controlId="formBasicEmail">
                 <Form.Control
                   type="text"
@@ -74,10 +74,10 @@ const Home = () => {
                 controlId="formBasicPassword"
               >
                 <Form.Control
-                  type="password"
+                  type="text"
                   placeholder="Enter Your Phone No."
-                  name="phoneNo"
-                  value={inpval.phoneNo}
+                  name="phone"
+                  value={inpval.phone}
                   onChange={e=>getdata(e)} 
                 />
               </Form.Group>
@@ -100,8 +100,8 @@ const Home = () => {
                 <Form.Control
                   type="text"
                   placeholder="Create Your Refrence Id"
-                  name="refrenceId"
-                  value={inpval.refrenceId}
+                  name="refrenceid"
+                  value={inpval.refrenceid}
                   onChange={e=>getdata(e)}
                 />
               </Form.Group>

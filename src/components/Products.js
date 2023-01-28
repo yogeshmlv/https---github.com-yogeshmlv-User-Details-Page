@@ -8,7 +8,7 @@ const Product = () => {
    axios.get("http://localhost/backend/get-user.php")
    .then((result)=>{
  setUser(result.data[0].data);
-   // console.log(result.data[0].data);
+    console.log(result.data[0].data);
    })
    
   },[]);
@@ -23,9 +23,9 @@ const Product = () => {
               <th scope="col">id</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
-              <th scope="col">phoneNo</th>
+              <th scope="col">phone</th>
               <th scope="col">password</th>
-              <th scope="col">refrenceId</th>
+              <th scope="col">refrenceid</th>
             </tr>
           </thead>
           <tbody>
@@ -34,9 +34,9 @@ const Product = () => {
                 <th scope="row">{user.id}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.phoneNo}</td>
+                <td>{user.phone}</td>
                 <td>{user.password}</td>
-                <td>{user.refrenceId}</td>
+                <td>{user.refrenceid}</td>
               </tr>
              ))}
           </tbody>
